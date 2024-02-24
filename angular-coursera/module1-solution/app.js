@@ -12,13 +12,19 @@
        $scope.splitMenu = function () {
            let menu = $scope.menu;
            menu = menu.replace(/\s/g, "");
-           let list = menu.split(",")
-           let cleanList = list.filter(Boolean);
-           if(cleanList.length > 3){
-               $scope.msg = "Too much!";
+
+           if(menu.length <= 0) {
+               $scope.msg = "Please enter data first";
            } else {
-               $scope.msg = "Enjoy!";
+               let list = menu.split(",")
+               let cleanList = list.filter(Boolean);
+               if(cleanList.length > 3){
+                   $scope.msg = "Too much!";
+               } else {
+                   $scope.msg = "Enjoy!";
+               }
            }
+
        }
 
 
